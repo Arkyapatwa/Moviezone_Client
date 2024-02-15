@@ -9,6 +9,9 @@ button {
     border-radius: 5vh;
     border: none;
 }
+button:hover {
+    background-color: rgb(120, 35, 35);
+}
 
 nav .s-box {
     height: 80%;
@@ -27,18 +30,27 @@ nav div input {
     width: 80%;
     border-radius: 5vw;
 }
+nav div input:focus{
+    outline:none
+}
 
 h2 {
     color: rgb(77, 60, 60);
+    cursor: pointer;
 }
 span {
     color: darkred;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
+.loc {
+    justify-content: center;
+    align-items: center;
+    margin: 0.3vw;
+    cursor: pointer;
+    width: 20%;
+}
+.loc:hover {
+    background-color: rgb(251, 242, 231);
+    border-radius: 5vh;
+    transition: all ease-in-out 0.2s;
 }
