@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -18,20 +19,4 @@ export class NavbarComponent {
 
   }
 
-  fetchupcommingMovies() {
-    const options = {
-      method: 'GET',
-      url: 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
-      header: {headers: {
-        'X-RapidAPI-Key': '',
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-      }}
-    };
-    
-
-    this.http.get(options.url, options.header).subscribe((res:any) => {
-      this.movieList = res.results.slice(0, 6);
-      console.log(this.movieList)
-    })
-  }
 }
