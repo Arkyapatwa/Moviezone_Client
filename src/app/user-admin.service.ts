@@ -26,4 +26,16 @@ export class UserAdminService {
     return this.http.post<string>(url, userDTO);
   }
 
+  // admin API's
+
+  registerNewAdmin(adminDTO: any) {
+    const url = `${this.apiUrl}/register`;
+    return this.http.post<string>(url, adminDTO);
+  }
+
+  authenticateAdmin(adminCredDTO: any) {
+    const url = `${this.apiUrl}/authenticate`;
+    return this.http.post<any>(url, adminCredDTO);
+  }
+
 }
