@@ -15,8 +15,26 @@ export class MovieService {
     },
   };
 
+  private apiUrl = environment.apiUrl;
+
+  fetchAllMovies() {
+    const url = `${this.apiUrl}/movies`;
+    return this.http.get(url);
+  }
+
+  fetchMovieById(movieId: number) {
+    const url = `${this.apiUrl}/movie/${movieId}`;
+    return this.http.get(url);
+  }
+
+  addMovie(movieDTO: any) {
+    const url = `${this.apiUrl}/addMovie`;
+    return this.http.post(url, movieDTO);
+  }
+
   fetchUpcomingMovies() {
     const url = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming'
     return this.http.get(url, this.rapidApiHeader);
   }
+
 }
